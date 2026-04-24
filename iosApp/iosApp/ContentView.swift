@@ -4,7 +4,9 @@ import ComposeApp
 
 struct ComposeView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
-        MainViewControllerKt.MainViewController()
+        MainViewControllerKt.MainViewController {
+            UIHostingController(rootView: NativeGreetingView())
+        }
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
@@ -12,10 +14,11 @@ struct ComposeView: UIViewControllerRepresentable {
 
 struct ContentView: View {
     var body: some View {
-        ComposeView()
-            .ignoresSafeArea()
+        NavigationStack {
+            ComposeView()
+                .ignoresSafeArea(.keyboard)
+                .navigationTitle("My App")
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
-
-
-
