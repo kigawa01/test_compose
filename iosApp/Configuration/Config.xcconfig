@@ -1,0 +1,7 @@
+TEAM_ID=
+
+PRODUCT_NAME=test_compose
+PRODUCT_BUNDLE_IDENTIFIER=com.example.test_compose.test_compose$(TEAM_ID)
+
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0
