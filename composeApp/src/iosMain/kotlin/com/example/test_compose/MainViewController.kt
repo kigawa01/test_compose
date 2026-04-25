@@ -7,7 +7,8 @@ import platform.UIKit.UIViewController
 fun MainViewController(
     createSwiftUIView: () -> UIViewController
 ) = ComposeUIViewController {
-    CompositionLocalProvider(LocalSwiftUIViewControllerFactory provides createSwiftUIView) {
+    CompositionLocalProvider(
+        LocalSwiftUIViewControllerFactory provides createSwiftUIView) {
         App()
     }
 }
